@@ -59,7 +59,7 @@ Dockerイメージを管理するリポジトリ。Git Hubみたいなもの。
 1 Docker-Hubからコンテナの元となるイメージを取得する(docker pull)
 
 ```
-docker image pull Hoge:7
+docker image pull imageName:tagName
 ```
 
 2 取得したイメージを元にコンテナを起動(docker run)
