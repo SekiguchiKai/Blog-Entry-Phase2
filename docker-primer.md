@@ -56,14 +56,14 @@ Dockerイメージを管理するリポジトリ。Git Hubみたいなもの。
 オプション等の詳細は、他の記事参照。
 
 ### 既に存在するものをそのまま使用する
-1 Docker-Hubからコンテナの元となるイメージを取得する(docker pull)
+1 Docker-Hubからコンテナの元となるイメージを取得する
 
 ```
 docker image pull imageName:tagName
 ```
 
-2 取得したイメージを元にコンテナを起動(docker run)
-→　pullを飛ばしてdocker runだけでも可能、ローカルに存在しない場合はpullしてくる
+2 取得したイメージを元にコンテナを起動
+→　pullを飛ばしてdocker runだけでも可能、ローカルに存在しない場合はDockerが自動でpullしてくれる
 
 ```
 docker run imageName
