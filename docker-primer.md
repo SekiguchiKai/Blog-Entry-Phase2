@@ -12,8 +12,6 @@
 ## 最低限の知識
 ### 仮想化の種類
 Dockerの仮想化はコンテナ型。
-詳しくは、以下。
-[「Docker」を全く知らない人のために「Docker」の魅力を伝えるための「Docker」入門 - Qiita](https://qiita.com/bremen/items/4604f530fe25786240db#docker%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF)
 
 > コンテナはホストOSから見ると単一のプロセスとして扱われ、カーネル部分をホストOSと共有するため、リソース使用量が非常に少ない
 
@@ -34,10 +32,11 @@ Dockerの仮想化はコンテナ型。
 
 ### イメージ
 上記のコンテナを起動し、実行する際に必要なライブラリ等のファイルシステムで設定がまとめられている。
+//イメージ自体がどんなものか（os+アプリだったりosだったり）みたいな話があると良いかも？
 Read-Onlyである。
 [Docker Hub](https://hub.docker.com/) (後述)に公式や誰かが作成したイメージが公開されている。
 
-そのDockerのイメージを元に自分で必要なイメージをさらに作成していく感じ。
+そのDockerのイメージを元に自分で必要なイメージをさらに追加して自分用のイメージを作成していく感じ。
 イメージはレイヤ構成になっていて、必要なイメージを重ねていく。
 公式では、[nginx](https://hub.docker.com/_/nginx/)や[centos](https://hub.docker.com/_/centos/)と言ったミドルウェアやOSのイメージが公開されている。
 
@@ -45,7 +44,7 @@ Read-Onlyである。
 ### Dockerfile
 イメージの設定ファイル(構成情報)。
 これを書くことによってインフラの設定をコードで管理することができるようになる。
-Docker Hub等からインストールした公式のイメージ等を組み合わせたりして、自分でイメージを作成することができるが、Dokcerfileがあれば、Dockerfileをビルドすることによって、環境毎に面倒臭い諸々の設定等を毎回行うことなく、他の環境でもイメージを作成し、コンテナを起動することができる。つまり、1回Dockerfileを書いてしまえば、面倒臭いインフラの環境構築を毎回する必要がなくなるのだ。
+Docker Hub等からインストールした公式のイメージ等を組み合わせたりして、自分でイメージを作成することができるが、Dockerfileをビルドすることによって、環境毎に面倒臭い諸々の設定等を毎回行うことなく、他の環境でも同じイメージを作成し、コンテナを起動することができる。つまり、1回Dockerfileを書いてしまえば、面倒臭いインフラの環境構築を毎回する必要がなくなるのだ。
 
 ### Docker Hub
 Dockerイメージを管理するリポジトリ。Git Hubみたいなもの。
@@ -91,8 +90,8 @@ docker commit containerName imageName
 docker image pull imageName:tagName
 ```
 
-2 Dockerイメージや、諸々の設定をDockerfile(設定ファイル)に記述する
-[【入門】Dockerfileの基本的な書き方 | レコチョクのエンジニアブログ](https://techblog.recochoku.jp/1022) 等が参考になる。
+2 Dockerイメージや、諸々の設定をDockerfile(設定ファイル)に記述する  
+[【入門】Dockerfileの基本的な書き方 | レコチョクのエンジニアブログ](https://techblog.recochoku.jp/1022) 等が参考になる
 
 3 Dockerfileを元にイメージをビルドする(docker build)
 
@@ -106,8 +105,8 @@ docker build -t imageName:tagName path/to/Dockerfile
 docker run imageName
 ```
 
-5. 作成したイメージをDocker Hubにpushする
-コードをgit hubにあげるようなもの。
+5 作成したイメージをDocker Hubにpushする  
+コードをgit hubにあげるようなもの  
 [docker push](https://qiita.com/suin/items/20d735823e158196983e)
 
 ## 今後の学習の流れ
