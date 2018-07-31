@@ -56,7 +56,7 @@ Dockerイメージを管理するリポジトリ。Git Hubみたいなもの。
 オプション等の詳細は、他の記事参照。
 
 ### 既に存在するものをそのまま使用する
-1 Docker-Hubからコンテナの元となるイメージを取得する
+1 Docker Hubからコンテナの元となるイメージを取得する
 
 ```
 docker image pull imageName:tagName
@@ -85,10 +85,10 @@ docker commit containerName imageName
 参考 : [Dockerでcommitしてみる - Qiita](https://qiita.com/mats116/items/712575dc50513dfdf0a2)
 
 ### 新しく自分で作成する場合(Dockerfileから作成する場合)
-1 Docker-Hubからコンテナの元となるイメージを取得する
+1 Docker Hubからコンテナの元となるイメージを取得する
 
 ```
-docker image pull imageName:7
+docker image pull imageName:tagName
 ```
 
 2 Dockerイメージや、諸々の設定をDockerfile(設定ファイル)に記述する
