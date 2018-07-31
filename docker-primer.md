@@ -38,7 +38,7 @@ Read-Onlyである。
 [Docker Hub](https://hub.docker.com/) (後述)に公式や誰かが作成したイメージが公開されている。
 
 そのDockerのイメージを元に自分で必要なイメージをさらに作成していく感じ。
-イメージはレイヤ構成になっていて、必要なイメージを重なっていく。
+イメージはレイヤ構成になっていて、必要なイメージを重ねていく。
 公式では、[nginx](https://hub.docker.com/_/nginx/)や[centos](https://hub.docker.com/_/centos/)と言ったミドルウェアやOSのイメージが公開されている。
 
 
